@@ -634,7 +634,7 @@ class GetDelegate<T> extends RouterDelegate<RouteDecoder<T>>
 
   @override
   void backUntil(bool Function(GetPage) predicate) {
-    while (_activePages.length <= 1 && !predicate(_activePages.last.route!)) {
+    while (_activePages.isNotEmpty && !predicate(_activePages.last.route!)) {
       _popWithResult();
     }
 
